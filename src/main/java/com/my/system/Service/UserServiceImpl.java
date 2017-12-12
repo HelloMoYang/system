@@ -1,12 +1,13 @@
 package com.my.system.Service;
 
 import com.my.system.Bean.User;
-import com.my.system.Mapper.UserMapper;
+import com.my.system.Dao.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
-public class UserServiceImpl implements UserService{
+@Service
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;

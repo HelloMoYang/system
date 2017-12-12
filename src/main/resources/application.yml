@@ -4,8 +4,6 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/course_system?characterEncoding=utf8&useSSL=true
     username: root
     password: 123456
-mybatis:
-  type-aliases-package: com.my.system.Bean
 
 #server:
 #  port: 8081
