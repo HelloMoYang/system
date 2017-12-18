@@ -14,7 +14,7 @@ public interface UserMapper {
     @Select("select * from user")
     public List<User> getUserList();
 
-    @Select("insert into user(username,password,age) values(#{username},#{password},#{age}")
+    @Insert("insert into user(username,password,age) values(#{username},#{password},#{age})")
     public int add(User user);
 
     @Update("update user set username = #{user.username}, password = #{user.password}, age = #{user.age} where Id = #{id}")
