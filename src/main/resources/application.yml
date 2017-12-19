@@ -4,7 +4,13 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/course_system?characterEncoding=utf8&useSSL=true
     username: root
     password: 123456
-
+  thymeleaf:
+    mode: HTML5
+    encoding: utf-8
+    content-type: text/html
+    #   开发时关闭缓存，不然没法看到实时页面
+    cache: false
 #server:
 #  port: 8081
 #  context-path: /boot
+
