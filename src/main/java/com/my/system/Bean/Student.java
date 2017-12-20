@@ -3,70 +3,63 @@ package com.my.system.Bean;
 import java.util.Date;
 
 public class Student {
-    private Integer StudentNum;
-    private Integer MajorNum;
-    private String StudentName;
-    private String StudentSex;
-    private Date StudentBirthday;
-    private String StudentPassword;
+    private Integer userid;
 
-    public Integer getStudentNum() {
-        return StudentNum;
+    private String username;
+
+    private String sex;
+
+    private Date birthyear;
+
+    private Date grade;
+
+    private Integer collegeid;
+
+    public Integer getUserid() {
+        return userid;
     }
 
-    public Integer getMajorNum() {
-        return MajorNum;
+    public void setUserid(Integer userid) {
+        this.userid = userid;
     }
 
-    public String getStudentName() {
-        return StudentName;
+    public String getUsername() {
+        return username;
     }
 
-    public String getStudentSex() {
-        return StudentSex;
+    public void setUsername(String username) {
+        this.username = username == null ? null : username.trim();
     }
 
-    public Date getStudentBirthday() {
-        return StudentBirthday;
+    public String getSex() {
+        return sex;
     }
 
-    public String getStudentPassword() {
-        return StudentPassword;
+    public void setSex(String sex) {
+        this.sex = sex == null ? null : sex.trim();
     }
 
-    public void setStudentNum(Integer studentNum) {
-        StudentNum = studentNum;
+    public Date getBirthyear() {
+        return birthyear;
     }
 
-    public void setMajorNum(Integer majorNum) {
-        MajorNum = majorNum;
+    public void setBirthyear(Date birthyear) {
+        this.birthyear = birthyear;
     }
 
-    public void setStudentName(String studentName) {
-        StudentName = studentName;
+    public Date getGrade() {
+        return grade;
     }
 
-    public void setStudentSex(String studentSex) {
-        StudentSex = studentSex;
+    public void setGrade(Date grade) {
+        this.grade = grade;
     }
 
-    public void setStudentBirthday(Date studentBirthday) {
-        StudentBirthday = studentBirthday;
+    public Integer getCollegeid() {
+        return collegeid;
     }
 
-    public void setStudentPassword(String studentPassword) {
-        StudentPassword = studentPassword;
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "StudentNum=" + StudentNum +
-                ", MajorNum=" + MajorNum +
-                ", StudentName='" + StudentName + '\'' +
-                ", StudentSex='" + StudentSex + '\'' +
-                ", StudentBirthday=" + StudentBirthday +
-                ", StudentPassword='" + StudentPassword + '\'' +
-                '}';
+    public void setCollegeid(Integer collegeid) {
+        this.collegeid = collegeid;
     }
 }

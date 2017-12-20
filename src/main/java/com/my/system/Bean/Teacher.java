@@ -3,80 +3,83 @@ package com.my.system.Bean;
 import java.util.Date;
 
 public class Teacher {
-    private Integer TeacherNum;
-    private Integer DeptNum;
-    private String TeacherName;
-    private String TeacherSex;
-    private Date TeacherBirthday;
-    private String TeacherTitle;
-    private String TeacherPassword;
+    private Integer userid;
 
-    public Integer getTeacherNum() {
-        return TeacherNum;
+    private String username;
+
+    private String sex;
+
+    private Date birthyear;
+
+    private String degree;
+
+    private String title;
+
+    private Date grade;
+
+    private Integer collegeid;
+
+    public Integer getUserid() {
+        return userid;
     }
 
-    public void setTeacherNum(Integer teacherNum) {
-        TeacherNum = teacherNum;
+    public void setUserid(Integer userid) {
+        this.userid = userid;
     }
 
-    public Integer getDeptNum() {
-        return DeptNum;
+    public String getUsername() {
+        return username;
     }
 
-    public void setDeptNum(Integer deptNum) {
-        DeptNum = deptNum;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getTeacherName() {
-        return TeacherName;
+    public String getSex() {
+        return sex;
     }
 
-    public void setTeacherName(String teacherName) {
-        TeacherName = teacherName;
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
-    public String getTeacherSex() {
-        return TeacherSex;
+    public Date getBirthyear() {
+        return birthyear;
     }
 
-    public void setTeacherSex(String teacherSex) {
-        TeacherSex = teacherSex;
+    public void setBirthyear(Date birthyear) {
+        this.birthyear = birthyear;
     }
 
-    public Date getTeacherBirthday() {
-        return TeacherBirthday;
+    public String getDegree() {
+        return degree;
     }
 
-    public void setTeacherBirthday(Date teacherBirthday) {
-        TeacherBirthday = teacherBirthday;
+    public void setDegree(String degree) {
+        this.degree = degree;
     }
 
-    public String getTeacherTitle() {
-        return TeacherTitle;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTeacherTitle(String teacherTitle) {
-        TeacherTitle = teacherTitle;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getTeacherPassword() {
-        return TeacherPassword;
+    public Date getGrade() {
+        return grade;
     }
 
-    public void setTeacherPassword(String teacherPassword) {
-        TeacherPassword = teacherPassword;
+    public void setGrade(Date grade) {
+        this.grade = grade;
     }
 
-    @Override
-    public String toString() {
-        return "Teacher{" +
-                "TeacherNum=" + TeacherNum +
-                ", DeptNum=" + DeptNum +
-                ", TeacherName='" + TeacherName + '\'' +
-                ", TeacherSex='" + TeacherSex + '\'' +
-                ", TeacherBirthday=" + TeacherBirthday +
-                ", TeacherTitle='" + TeacherTitle + '\'' +
-                ", TeacherPassword='" + TeacherPassword + '\'' +
-                '}';
+    public Integer getCollegeid() {
+        return collegeid;
+    }
+
+    public void setCollegeid(Integer collegeid) {
+        this.collegeid = collegeid;
     }
 }

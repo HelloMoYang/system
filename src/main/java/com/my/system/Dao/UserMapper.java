@@ -1,6 +1,7 @@
 package com.my.system.Dao;
 
 import com.my.system.Bean.User;
+import com.my.system.Bean.UserLogin;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
