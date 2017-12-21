@@ -19,13 +19,21 @@ public class MyShiroRealm extends AuthorizingRealm{
     @Autowired
     private UserLoginService userLoginService;
 
+    /*
+    *   获取授权信息
+    * */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
+
         return null;
     }
 
+    /*
+    *  获取身份验证相关信息
+    * */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
+        //  token是从页面提交的进行认证的令牌信息
         UsernamePasswordToken token = (UsernamePasswordToken) authenticationToken;
         Map map = new HashMap();
         map.put("username", token.getUsername());
@@ -34,6 +42,7 @@ public class MyShiroRealm extends AuthorizingRealm{
         if(userLogin == null){
             throw new AccountException("用户名或密码不正确！");
         } else {
+            //  身份验证通过，从数据库中取出身份信息    getName()返回一个唯一的Realm名字
             return new SimpleAuthenticationInfo(userLogin,userLogin.getPassword(),getName());
         }
     }

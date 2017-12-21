@@ -8,18 +8,34 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ShiroConfiguration {
 
+    /**
+     * ShiroFilterFactoryBean 处理拦截资源文件问题。
+     * 注意：单独一个ShiroFilterFactoryBean配置是或报错的，因为在
+     * 初始化ShiroFilterFactoryBean的时候需要注入：SecurityManager
+     */
     @Bean
-    public ShiroFilterFactoryBean shiroFilter(SecurityManager securityManager){
+    public ShiroFilterFactoryBean shiroFilter(DefaultWebSecurityManager securityManager){
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
-        return null;
+        //  必须注入SecurityManager
+        shiroFilterFactoryBean.setSecurityManager(securityManager);
+
+        // 如果不设置默认会自动寻找Web工程根目录下的"/login.jsp"页面
+        shiroFilterFactoryBean.setLoginUrl("/index");
+
+        //  登录成功后要跳转的链接
+        shiroFilterFactoryBean.setSuccessUrl("/loginSuccess");
+
+        //  未授权界面
+        //  shiroFilterFactoryBean.setUnauthorizedUrl("/403");
+        return shiroFilterFactoryBean;
     }
 
     @Bean
-    public SecurityManager securityManager(){
+    public DefaultWebSecurityManager securityManager(){
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         //  设置realm
         securityManager.setRealm(myShiroRealm());
-        return null;
+        return securityManager;
     }
 
     @Bean
