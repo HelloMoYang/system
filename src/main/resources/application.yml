@@ -5,7 +5,8 @@ spring:
     username: root
     password: 123456
   thymeleaf:
-    mode: HTML5
+#  采用非严格HTML5
+    mode: LEGACYHTML5
     encoding: utf-8
     content-type: text/html
     #   开发时关闭缓存，不然没法看到实时页面

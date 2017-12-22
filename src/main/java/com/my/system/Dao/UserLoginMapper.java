@@ -8,4 +8,7 @@ import org.springframework.stereotype.Repository;
 public interface UserLoginMapper {
     @Select("select * from userlogin where userName = #{username}, password = #{password}")
     public UserLogin selectByMap(String username, String password);
+
+    @Select("select * from userlogin where userName = #{username}")
+    public UserLogin findByUsername(String username);
 }

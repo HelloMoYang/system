@@ -3,13 +3,37 @@
 <head>
     <meta charset="UTF-8" />
     <title>Hello</title>
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-<p th:text="'Hello!,' + ${name} + '!'">2333</p>
-<form>
-    <input type="text" name="username"/>
-    <input type="password" name="password">
-    <input type="submit" value="登录">
-</form>
+<!--<p th:text="'Hello!,' + ${name} + '!'">2333</p>-->
+<!--<div class="container-fluid">-->
+    <!--<div class="col-md-12" style="background-color: red; height: 200px"></div>-->
+    <!--<div class="col-md-12" style="background-color: gray; height: 200px">-->
+        <!--<form class="form-horizontal" th:action="@{/userLogin}" th:method="POST">-->
+            <!--<div class="form-group">-->
+                <!--<label for="username" class="col-md-4 control-label">用户名</label>-->
+                <!--<div class="col-md-3">-->
+                    <!--<input type="text" class="form-control" id="username" placeholder="请输入用户名" />-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label for="password" class="col-md-4 control-label">密码</label>-->
+                <!--<div class="col-md-3">-->
+                    <!--<input type="password" class="form-control" id="password" placeholder="请输入密码" />-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<div class="col-md-offset-5">-->
+                    <!--<button type="submit" class="btn btn-default">登录</button>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</form>-->
+    <!--</div>-->
+    <!--<div class="col-md-12" style="background-color: brown; height: 200px"></div>-->
+
+    <script src="../static/js/jquery-3.2.1.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+</div>
 </body>
 </html>

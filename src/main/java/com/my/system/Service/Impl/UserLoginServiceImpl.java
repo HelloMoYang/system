@@ -2,7 +2,6 @@ package com.my.system.Service.Impl;
 
 import com.my.system.Bean.UserLogin;
 import com.my.system.Dao.UserLoginMapper;
-import com.my.system.Dao.UserMapper;
 import com.my.system.Service.UserLoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,5 +19,10 @@ public class UserLoginServiceImpl implements UserLoginService {
         String username = (String) map.get("username");
         String password = (String) map.get("passowrd");
         return userLoginMapper.selectByMap(username,password);
+    }
+
+    @Override
+    public UserLogin findByUsername(String username) {
+        return userLoginMapper.findByUsername(username);
     }
 }

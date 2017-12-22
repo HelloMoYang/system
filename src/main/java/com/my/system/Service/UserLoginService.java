@@ -6,4 +6,5 @@ import java.util.Map;
 
 public interface UserLoginService {
     public UserLogin selectByMap(Map map);
+    public UserLogin findByUsername(String username);
 }
