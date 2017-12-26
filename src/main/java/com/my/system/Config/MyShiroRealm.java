@@ -60,9 +60,9 @@ public class MyShiroRealm extends AuthorizingRealm{
         //  token是从页面提交的进行认证的令牌信息
         System.out.println("进行身份认证...");
         UsernamePasswordToken token = (UsernamePasswordToken) authenticationToken;
-        Map map = new HashMap();
+        Map<String,String> map = new HashMap<>();
         map.put("username", token.getUsername());
-        map.put("password", token.getPassword());
+        map.put("password", String.valueOf(token.getPassword()));
         UserLogin userLogin = userLoginService.selectByMap(map);
         if(userLogin == null){
             throw new AccountException();

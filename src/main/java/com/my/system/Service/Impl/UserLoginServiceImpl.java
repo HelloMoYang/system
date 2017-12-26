@@ -17,7 +17,7 @@ public class UserLoginServiceImpl implements UserLoginService {
     @Override
     public UserLogin selectByMap(Map map) {
         String username = (String) map.get("username");
-        String password = (String) map.get("passowrd");
+        String password = (String) map.get("password");
         return userLoginMapper.selectByMap(username,password);
     }
 
