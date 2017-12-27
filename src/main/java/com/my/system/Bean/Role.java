@@ -3,7 +3,7 @@ package com.my.system.Bean;
 public class Role {
     private Integer roleid;
 
-    private String rolename;
+    private String roleName;
 
     private String permissions;
 
@@ -15,12 +15,12 @@ public class Role {
         this.roleid = roleid;
     }
 
-    public String getRolename() {
-        return rolename;
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setRolename(String rolename) {
-        this.rolename = rolename == null ? null : rolename.trim();
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 
     public String getPermissions() {

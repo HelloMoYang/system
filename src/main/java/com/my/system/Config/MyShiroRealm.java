@@ -8,7 +8,9 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
+import org.apache.shiro.mgt.DefaultSecurityManager;
 import org.apache.shiro.realm.AuthorizingRealm;
+import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -18,9 +20,6 @@ import java.util.Map;
 import java.util.Set;
 
 public class MyShiroRealm extends AuthorizingRealm{
-
-    private static final String User_Name = "admin";
-    private static final String PassWord = "123";
 
     @Autowired
     private UserLoginService userLoginService;
@@ -35,10 +34,9 @@ public class MyShiroRealm extends AuthorizingRealm{
         System.out.println("进行权限认证...");
         //   UserLogin token = (UserLogin) SecurityUtils.getSubject().getPrincipal();
         //   String currentUsername = super,getAvailablePrincipal(principalCollection);
-        String currentLoginName = (String) principalCollection.getPrimaryPrincipal();
+        UserLogin userLogin = (UserLogin) principalCollection.getPrimaryPrincipal();
         Role role = null;
         try {
-            UserLogin userLogin = userLoginService.findByUsername(currentLoginName);
             role = roleService.findById(userLogin.getRole());
         }catch(Exception e){
             e.printStackTrace();
@@ -46,7 +44,7 @@ public class MyShiroRealm extends AuthorizingRealm{
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
         Set<String> roles = new HashSet<String>();
         if(role != null){
-            roles.add(role.getRolename());
+            roles.add(role.getRoleName());
             info.setRoles(roles);
         }
         return info;

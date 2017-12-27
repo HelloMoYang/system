@@ -5,6 +5,7 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AccountException;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,6 +29,10 @@ public class UserLoginController {
             currentUser.login(token);
             UserLogin userLogin = (UserLogin) currentUser.getPrincipal();
             session.setAttribute("userLogin",userLogin);
+            if (currentUser.hasRole("admin")){
+                ModelAndView mv = new ModelAndView("admin");
+                return mv;
+            }
             ModelAndView mv = new ModelAndView("loginSuccess");
             return mv;
         }catch(AuthenticationException e){
@@ -36,5 +41,4 @@ public class UserLoginController {
             return mv;
         }
     }
-
 }
