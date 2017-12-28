@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>admin</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <!-- <link href="../css/bootstrap-theme.min.css" rel="stylesheet" /> -->
+    <link href="../fonts" />
+</head>
+
+<body>
+    <div class="well well-lg">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-5">
+                    <span style="font-size: 22px">课程名单管理</span>
+                </div>
+                <div class="col-xs-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="输入课程名" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" style="background-color:rgb(187, 184, 184)">搜索</button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-xs-3">
+                    <button type="button" class="btn btn-default">添加课程信息
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </div>
+            </div>
+            <div style="height: 20px"></div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>课程号</th>
+                            <th>课程名称</th>
+                            <th>授课老师编号</th>
+                            <th>上课时间</th>
+                            <th>上课地点</th>
+                            <th>周数</th>
+                            <th>课程类型</th>
+                            <th>学分</th>
+                            <th>操作</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>C语言</td>
+                            <td>1001</td>
+                            <td>周二</td>
+                            <td>科401</td>
+                            <td>18</td>
+                            <td>必修课</td>
+                            <td>3</td>
+                            <td>
+                                <button type="button" class="btn btn-info" style="padding: 1px 7px">修改</button>
+                                <button type="button" class="btn btn-danger" style="padding: 1px 7px">删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Python</td>
+                            <td>1001</td>
+                            <td>周四</td>
+                            <td>X402</td>
+                            <td>18</td>
+                            <td>必修课</td>
+                            <td>3</td>
+                            <td>
+                                <button type="button" class="btn btn-info" style="padding: 1px 7px">修改</button>
+                                <button type="button" class="btn btn-danger" style="padding: 1px 7px">删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>数据结构</td>
+                            <td>1001</td>
+                            <td>周四</td>
+                            <td>科401</td>
+                            <td>18</td>
+                            <td>必修课</td>
+                            <td>2</td>
+                            <td>
+                                <button type="button" class="btn btn-info" style="padding: 1px 7px">修改</button>
+                                <button type="button" class="btn btn-danger" style="padding: 1px 7px">删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Java程序设计</td>
+                            <td>1002</td>
+                            <td>周五</td>
+                            <td>科401</td>
+                            <td>18</td>
+                            <td>必修课</td>
+                            <td>2</td>
+                            <td>
+                                <button type="button" class="btn btn-info" style="padding: 1px 7px">修改</button>
+                                <button type="button" class="btn btn-danger" style="padding: 1px 7px">删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>英语</td>
+                            <td>1002</td>
+                            <td>周四</td>
+                            <td>X302</td>
+                            <td>18</td>
+                            <td>必修课</td>
+                            <td>2</td>
+                            <td>
+                                <button type="button" class="btn btn-info" style="padding: 1px 7px">修改</button>
+                                <button type="button" class="btn btn-danger" style="padding: 1px 7px">删除</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12" style="display:flex;justify-content:center">
+                    <nav>
+                        <ul class="pagination">
+                            <li class="disabled">
+                                <a href="#">&laquo;</a>
+                            </li>
+                            <li class="active">
+                                <a href="#">1</a>
+                            </li>
+                            <li>
+                                <a href="#">2</a>
+                            </li>
+                            <li>
+                                <a href="#">3</a>
+                            </li>
+                            <li>
+                                <a href="#">&raquo;</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.pagination li').click(function () {
+                $(this).addClass('active').siblings().removeClass('active');
+                if ($('.pagination li').eq(1).attr('class') == 'active') {
+                    $('.pagination li').eq(0).addClass('disabled');
+                } else {
+                    $('.pagination li').eq(0).removeClass('disabled');
+                }
+                if ($('.pagination li').eq(3).attr('class') == 'active') {
+                    $('.pagination li').eq(4).addClass('disabled');
+                } else {
+                    $('.pagination li').eq(4).removeClass('disabled');
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

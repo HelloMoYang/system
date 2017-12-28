@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>admin</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <!-- <link href="../css/bootstrap-theme.min.css" rel="stylesheet" /> -->
+    <link href="../fonts" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row well well-sm" id="title">
+            <div class="col-md-10" style="height:40px;display:flex;align-items:center">
+                <span style="font-size:18px">教务信息查询系统(管理员)</span>
+            </div>
+            <div class="col-md-2" style="font-size:18px;height:40px;display:flex;align-items:center">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="true">
+                        <span class="glyphicon glyphicon-user"></span>123
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li>
+                            <a href="#">修改个人信息</a>
+                        </li>
+                        <li>
+                            <a href="#">注销</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="menu">
+            <div class="col-md-3">
+                <ul class="nav nav-pills nav-stacked">
+                    <li target='iframeCourse' role="presentation" class="active">
+                        <a href="#">课程管理</a>
+                    </li>
+                    <li target='iframeStudent' role="presentation">
+                        <a href="#">学生管理</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#">教师管理</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#">账号密码重置</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#">修改密码</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#">退出系统</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-9 iframe" style="height:500px">
+                <iframe id="iframeCourse" width="100%" height="100%" scrolling="no" style="border: 0" src="showCourse.html"></iframe>
+                <iframe id="iframeStudent" width="100%" height="100%" scrolling="no" style="border: 0" src="showStudent.html"></iframe>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/admin.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.iframe iframe').hide();
+            $('#iframeCourse').show();
+            $('.nav li').click(function () {
+                $(this).addClass('active').siblings().removeClass('active');
+                var id = $(this).attr('target');
+                $('#' + id).show().siblings().hide();
+            })
+        })
+    </script>
+</body>
+
+</html>
