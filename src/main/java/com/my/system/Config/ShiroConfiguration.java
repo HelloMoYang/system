@@ -24,6 +24,9 @@ public class ShiroConfiguration {
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         Map<String,String> filterChainDefinitionMap = new LinkedHashMap<String,String>();
         filterChainDefinitionMap.put("/userLogin","anon");
+        filterChainDefinitionMap.put("/js/**","anon");
+        filterChainDefinitionMap.put("/css/**","anon");
+        filterChainDefinitionMap.put("/fonts/**","anon");
         filterChainDefinitionMap.put("/logout","logout");
         filterChainDefinitionMap.put("/**","authc");
         //  不管输入怎样的url，都会跳转到此url，然后访问Controller，不设置此项目将默认跳转login页面
