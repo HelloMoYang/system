@@ -1,10 +1,9 @@
-package com.my.system.Config;
+package com.my.system.ShiroConfig;
 
 import com.my.system.Bean.Role;
 import com.my.system.Bean.UserLogin;
 import com.my.system.Service.RoleService;
 import com.my.system.Service.UserLoginService;
-import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;

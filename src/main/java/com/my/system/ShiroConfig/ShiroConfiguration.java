@@ -1,4 +1,4 @@
-package com.my.system.Config;
+package com.my.system.ShiroConfig;
 
 import org.apache.shiro.mgt.DefaultSecurityManager;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
