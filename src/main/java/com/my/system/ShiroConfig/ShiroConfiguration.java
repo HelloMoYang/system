@@ -27,7 +27,7 @@ public class ShiroConfiguration {
         shiroFilterFactoryBean.setLoginUrl("/");
         shiroFilterFactoryBean.setSuccessUrl("/loginSuccess");
         //  未授权界面
-        //  shiroFilterFactoryBean.setUnauthorizedUrl("/403");
+          shiroFilterFactoryBean.setUnauthorizedUrl("/error");
 
         filterChainDefinitionMap.put("/js/**","anon");
         filterChainDefinitionMap.put("/css/**","anon");

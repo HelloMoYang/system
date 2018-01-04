@@ -10,6 +10,7 @@ public class HelloController {
     @GetMapping(value = "/")
     public ModelAndView hello(){
         ModelAndView mv = new ModelAndView("login");
+        System.out.println("返回登录视图");
         return mv;
     }
 }

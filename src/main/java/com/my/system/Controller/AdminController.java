@@ -43,6 +43,7 @@ public class AdminController {
     @GetMapping("/addCourse")
     public ModelAndView addCourse(){
         ModelAndView mv = new ModelAndView("admin/addCourse");
+
         return mv;
     }
 }
