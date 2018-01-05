@@ -17,4 +17,9 @@ public class CourseServiceImpl implements CourseService{
     public List<Course> getCourseList() {
         return courseMapper.getAllCourses();
     }
+
+    @Override
+    public int addCourse(Course course) {
+        return courseMapper.addCourse(course);
+    }
 }
